@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OMNI · Вход</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section class="login-screen" id="login-screen" aria-labelledby="login-title">
+    <div class="login-decoration login-decoration-one"></div>
+    <div class="login-decoration login-decoration-two"></div>
+    <div class="login-card">
+      <div class="login-logo"><span class="brandmark">O</span><span>OMNI</span></div>
+      <div class="login-label">ПАНЕЛЬ ПРЕПОДАВАТЕЛЯ</div>
+      <h1 id="login-title">Добро пожаловать</h1>
+      <p class="login-description">Войдите, чтобы открыть журнал успеваемости и учебные отчёты.</p>
+      <form id="login-form" novalidate>
+        <label for="login-username">Логин</label>
+        <input id="login-username" name="username" type="text" autocomplete="username" placeholder="Введите логин" required>
+        <label for="login-password">Пароль</label>
+        <div class="password-wrap">
+          <input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="Введите пароль" required>
+          <button type="button" id="toggle-password" class="password-toggle" aria-label="Показать пароль">Показать</button>
+        </div>
+        <p class="login-error" id="login-error" role="alert" hidden>Неверный логин или пароль.</p>
+        <button type="submit" class="login-submit">Войти в систему <span aria-hidden="true">→</span></button>
+      </form>
+      <p class="login-helper">s<strong>teacher</strong> / <strong>1234</strong></p>
+    </div>
+    <p class="login-copyright">OMNI · Система анализа успеваемости</p>
+  </section>
+
+  <script src="login.js"></script>
+</body>
+</html>

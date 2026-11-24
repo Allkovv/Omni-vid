@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OMNI · Журнал успеваемости</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    if (sessionStorage.getItem('omni_teacher_session') !== '1') {
+      window.location.replace('login.html');
+    }
+  </script>
+</head>
+<body>
+  <div class="app" id="application">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brandmark">O</div>
+        <div><strong>OMNI</strong><small>Панель преподавателя</small></div>
+      </div>
+      <div class="side-caption">РАБОЧЕЕ ПРОСТРАНСТВО</div>
+      <nav id="nav" aria-label="Разделы приложения">
+        <button data-view="dashboard" class="navitem active"><span>▦</span> Обзор</button>
+        <button data-view="grades" class="navitem"><span>▤</span> Журнал оценок</button>
+        <button data-view="groups" class="navitem"><span>▧</span> Учебные группы</button>
+        <button data-view="students" class="navitem"><span>♙</span> Студенты</button>
+        <button data-view="subjects" class="navitem"><span>▣</span> Дисциплины</button>
+        <button data-view="imports" class="navitem"><span>⇧</span> Импорт из Excel</button>
+        <button data-view="analytics" class="navitem"><span>◫</span> Аналитика</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <button id="reset-demo" class="small-link">↺ Сбросить изменения</button>
+        <div class="side-profile">
+          <div class="avatar">П</div>
+          <div><b>Преподаватель</b><small>teacher</small></div>
+          <button type="button" id="logout-button" class="logout-button" title="Выйти" aria-label="Выйти">↪</button>
+        </div>
+      </div>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <div class="crumb">Учебный журнал <span>/</span> <b id="crumb-current">Обзор</b></div>
+        <div class="top-right">
+          <span class="date-pill">2026 / 2027 · 1 семестр</span>
+          <span class="avatar top-avatar">П</span>
+        </div>
+      </header>
+      <div class="workspace">
+        <div class="page-head">
+          <div>
+            <div class="eyebrow">УПРАВЛЕНИЕ УСПЕВАЕМОСТЬЮ</div>
+            <h1 id="page-title">Обзор успеваемости</h1>
+            <p id="page-subtitle">Ключевые показатели и последние события журнала</p>
+          </div>
+          <div class="head-actions" id="head-actions"></div>
+        </div>
+        <div id="content"></div>
+      </div>
+      <footer>OMNI · Система анализа успеваемости <span>Учебный журнал</span></footer>
+    </main>
+  </div>
+  <div id="modal-root"></div>
+  <div id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
